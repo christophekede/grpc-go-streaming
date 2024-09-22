@@ -1,0 +1,4 @@
+https://gobyexample.com/
+https://go.dev/tour/
+
+https://grpc.io/docs/languages/go/basics/

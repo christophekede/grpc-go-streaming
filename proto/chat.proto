@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package chat;
+option go_package = "github.com/christophekede/maxvalue/proto/chat";
+
+
+message ClientMessage {
+  int32 id = 1;
+  int32 num = 2;
+}
+
+
+message ServerMessage {
+  int32 messageID = 1;
+  int32 max = 2;
+}
+
+message MessageID {  
+    int32 id = 1;    
+}
+message Empty {}
+
+
+service ChatService {
+  rpc StreamMessages(stream ClientMessage) returns (stream ServerMessage);
+  rpc GetMessageID(Empty) returns (MessageID) {}; 
+
+}
